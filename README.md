@@ -8,7 +8,7 @@
 [![Twitter](https://img.shields.io/badge/Twitter-@commixproject-blue.svg)](http://www.twitter.com/commixproject)
 
 
-This is a commix 'API' tool forked from the original commix,check command injection tool,used for scan command injection vulnerability scan.
+This is a commix 'API' tool forked from the original commix,check command injection tool,used for command injection vulnerability scan.
 
 Usage:
     eg:
@@ -18,6 +18,6 @@ The usage is the same as original commix,if there exists a vul,commix will stop 
 
 ```
 import re
-if re.search(r"The parameter.*seems injectable",string,re.I):
+if re.search(r"The parameter.*seems injectable",commix_output_string,re.I):
     print("vul exists")
 ```
