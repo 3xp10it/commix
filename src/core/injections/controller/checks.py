@@ -59,13 +59,13 @@ Procced to the next attack vector.
 def next_attack_vector(technique, go_back):
   while True:
     if not menu.options.batch:
-      question_msg = "Continue with testing the " + technique + "? [Y/n] > "
+      question_msg = "Continue with testing the " + technique + "? [y/N] > "
       sys.stdout.write(settings.print_question_msg(question_msg))
       next_attack_vector = sys.stdin.readline().replace("\n","").lower()
     else:
       next_attack_vector = ""
     if len(next_attack_vector) == 0:
-       next_attack_vector = "y"
+       next_attack_vector = "n"
     if next_attack_vector in settings.CHOICE_YES:
       # Check injection state
       assessment_phase()

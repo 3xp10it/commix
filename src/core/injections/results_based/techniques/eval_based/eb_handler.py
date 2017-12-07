@@ -385,13 +385,13 @@ def eb_injection_handler(url, timesec, filename, http_request_method):
               if go_back == True:
                 break
               if not menu.options.batch:
-                question_msg = "Do you want a Pseudo-Terminal shell? [Y/n] > "
+                question_msg = "Do you want a Pseudo-Terminal shell? [y/n/Q] > "
                 sys.stdout.write(settings.print_question_msg(question_msg)) 
                 gotshell = sys.stdin.readline().replace("\n","").lower()
               else:
                 gotshell = ""
               if len(gotshell) == 0:
-                 gotshell = "y"
+                 gotshell = "q"
               if gotshell in settings.CHOICE_YES:
                 if not menu.options.batch:
                   print ""
