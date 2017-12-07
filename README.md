@@ -9,3 +9,15 @@
 
 
 This is a commix 'API' tool forked from the original commix,check command injection tool,used for scan command injection vulnerability scan.
+
+Usage:
+    eg:
+    `py2 commix.py -u "http://192.168.93.139/dvwa/vulnerabilities/exec/#" -d "ip=1&Submit=Submit" --cookie "PHPSESSID=frselcstsnts1lsbddpee8du74;security=low" -p ip -v 3 --ignore-session --batch`
+
+The usage is the same as original commix,if there exists a vul,commix will stop and print "The parameter 'xx' seems injectable",we can use regexp to match it to check whether there exist a vul,eg:
+
+```
+import re
+if re.search(r"The parameter.*seems injectable",string,re.I):
+    print("vul exists")
+```
